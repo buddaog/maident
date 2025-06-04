@@ -1,0 +1,461 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #1a365d 0%, #4a2c82 100%);
+  --secondary-gradient: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  --accent-color: #e2b15b;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --white: #ffffff;
+  --bg-primary: #f7fafc;
+  --bg-secondary: #ffffff;
+  --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(var(--bg-secondary), 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.lang-btn.active {
+  color: var(--accent-color);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  color: var(--accent-color);
+}
+
+.contact-btn {
+  background: var(--primary-gradient);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 44, 130, 0.2);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background-image: url('https://images.pexels.com/photos/13339363/pexels-photo-13339363.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: var(--white);
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease;
+}
+
+.explore-btn {
+  background: var(--accent-color);
+  color: var(--text-primary);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(226, 177, 91, 0.3);
+}
+
+/* Tours Section */
+.tours-section {
+  padding: 6rem 2rem;
+  background: var(--bg-primary);
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+}
+
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tour-card {
+  background: var(--bg-secondary);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.tour-card:hover {
+  transform: translateY(-5px);
+}
+
+.tour-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tour-content {
+  padding: 1.5rem;
+}
+
+.tour-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.tour-description {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.tour-price {
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.tour-button {
+  display: inline-block;
+  background: var(--primary-gradient);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.tour-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 44, 130, 0.2);
+}
+
+/* Tour Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  overflow-y: auto;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal-content {
+  background: var(--bg-secondary);
+  max-width: 900px;
+  margin: 2rem auto;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.modal-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.modal-details {
+  padding: 2rem;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.modal-description {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.modal-contact {
+  text-align: center;
+  padding: 2rem;
+  background: var(--primary-gradient);
+  margin: -2rem;
+  margin-top: 0;
+}
+
+.modal-contact-btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--text-primary);
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.modal-contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(226, 177, 91, 0.3);
+}
+
+/* About Section */
+.about-section {
+  padding: 6rem 2rem;
+  background: var(--bg-secondary);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+  background: var(--secondary-gradient);
+  color: var(--white);
+  padding: 4rem 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.footer-contact-btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--text-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(226, 177, 91, 0.3);
+}
+
+.footer-copyright {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 2rem;
+  color: #a0aec0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tours-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    margin: 1rem;
+  }
+
+  .modal-image {
+    height: 300px;
+  }
+
+  .modal-gallery {
+    grid-template-columns: 1fr;
+  }
+}
